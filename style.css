@@ -13,7 +13,7 @@ body{
     position: absolute;
     top: 80px;
     padding: 10px;
-    right: 84px;
+    left: 45px;
     border: 2px solid black;
     font-family: 'Recursive', sans-serif; 
 }
@@ -22,12 +22,12 @@ body{
     position: absolute;
     top: 31px;
     padding: 10px;
-    right: 45px;
+    left: 45px;
     border: 2px solid black;
     font-family: 'Recursive', sans-serif; 
 }
 
-.gameContainer{
+#gameContainer{
     background-image: url(bg.png);
     background-repeat: no-repeat;
    
@@ -104,8 +104,33 @@ body{
 
 
 @media only screen and (max-width:800px){
-    .gameContainer {
+    #gameContainer {
        background: url("bg3.png");
+    }
+
+    @keyframes dino2 {
+        0%{
+            bottom: 50px;
+        }
+        20%{
+            bottom: 100px;
+        }
+        30%{
+            bottom: 150px;
+        }
+        50%{
+            bottom:  250px;
+        }
+        70%{
+            bottom: 150px;
+        }
+        80%{
+            bottom: 100px;
+        }
+        100%{
+            bottom: 50px;
+        }
+        
     }
 
     .dino{
@@ -113,14 +138,22 @@ body{
         bottom: 50px;
     }
 
+    
+    .animateDino{
+        animation: dino2 1s linear;
+    }
+
     .obstacle{
         bottom: 50px;
-        height:66px;
-        width: 100px;
+        height:50px;
+        width: 75px;
     }
 
     .obstacleAni{
-        animation: obstacleAni 2s linear infinite;
+        animation: obstacleAni 2.5s linear infinite;
     }
    
   }
+
+
+  
