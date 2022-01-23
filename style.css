@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@700&display=swap');
+
 *{
     margin:0;
     padding:0;
@@ -5,6 +7,24 @@
 
 body{
     overflow: hidden;
+}
+
+#scoreCount{
+    position: absolute;
+    top: 80px;
+    padding: 10px;
+    right: 84px;
+    border: 2px solid black;
+    font-family: 'Recursive', sans-serif; 
+}
+
+#highBox{
+    position: absolute;
+    top: 31px;
+    padding: 10px;
+    right: 45px;
+    border: 2px solid black;
+    font-family: 'Recursive', sans-serif; 
 }
 
 .gameContainer{
@@ -15,6 +35,14 @@ body{
     height: 100vh;
 }
 
+.gameOver{
+    position: relative;
+    top: 150px;
+    font-size: 53px;
+    visibility: hidden;
+    text-align: center;
+    font-family: 'Recursive', sans-serif;
+}
 
 .dino{
     background-image: url(dino2.png);
@@ -30,8 +58,8 @@ body{
 .obstacle{
     background-image: url(rock2.png);
     background-size: cover;
-    height:97px;
-    width: 125px;
+    height:66px;
+    width: 100px;
     position: absolute;
     bottom: 100px;
     left: 44vw;
@@ -88,7 +116,7 @@ body{
     .obstacle{
         bottom: 50px;
         height:66px;
-        width: 84px;
+        width: 100px;
     }
 
     .obstacleAni{
