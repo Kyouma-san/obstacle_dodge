@@ -116,7 +116,7 @@ body{
 
 @media only screen and (max-width:800px){
     #gameContainer {
-       background: url("bg3.png");
+       background: url("bg4.png");
     }
 
     @keyframes dino2 {
