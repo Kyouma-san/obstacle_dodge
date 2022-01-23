@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dino Dodge</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
 </head>
+
 <body>
     <div id="gameContainer">
         <div class="gameOver">
@@ -15,11 +17,15 @@
             <h3>Press enter or click to retry.</h3>
 
         </div>
-        <div id="scoreCount">Score: 0</div>
-        <div id="highBox">High Score: 0</div>
         <div class="dino"></div>
-        
+        <div id="scoreCount">Score: 0</div>
+        <div id="highBox">Score: 0</div>
         <div class="obstacle obstacleAni"></div>
+        <button onclick="reload()" class="retry">
+            Restart 
+        </button>
     </div>
 </body>
+<script src="script.js"></script>
+
 </html>

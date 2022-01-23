@@ -7,6 +7,7 @@ let width = screen.width;
 
 
 
+
 document.onkeydown = function (e) {
     console.log("key code:", e.key)
     if (e.key == "ArrowUp") {
@@ -42,6 +43,7 @@ setInterval(() => {
     dino = document.querySelector('.dino');
     gameOver = document.querySelector('.gameOver');
     obstacle = document.querySelector('.obstacle');
+    retry = document.querySelector('.retry');
 
     dx = parseInt(window.getComputedStyle(dino, null).getPropertyValue('left'));
     dy = parseInt(window.getComputedStyle(dino, null).getPropertyValue('top'));
@@ -65,21 +67,17 @@ setInterval(() => {
     //collision with obstacle for desktop
     
      if(width <= 800 && offsetX < 70 && offsetY < 51){
+         gameOver.innerHTML = "Game Over!!!"
+         
         gameOver.style.visibility = 'visible';
+        
         obstacle.classList.remove('obstacleAni');
-        document.onclick = function () {
-            location.reload()
-        }
+        retry.style.visibility = 'visible';
+       
 
-        document.onkeydown = function (e) {
-            if (e.key == "Enter") {
-                location.reload()
-            }
-        }
+        
     } else if (width > 800 && offsetX < 95 && offsetY < 52) {
-        console.log(width)
-    console.log(offsetX)
-    console.log(offsetY)
+        
         gameOver.style.visibility = 'visible';
         obstacle.classList.remove('obstacleAni');
         document.onclick = function () {
@@ -97,9 +95,15 @@ setInterval(() => {
 
 
 
-
-        updateScore(score)
+        hid = window.getComputedStyle(gameOver, null).getPropertyValue('visibility');
+        console.log(hid)
+        console.log(typeof(hid))
+        if(hid == 'hidden'){
+            updateScore(score)
         updateHighScore(score)
+        }
+
+        
         cross = false;
         setTimeout(() => {
             cross = true;
@@ -128,6 +132,7 @@ setInterval(() => {
 }, 50);
 
 function updateScore(score) {
+    
     scoreCount.innerHTML = "Score: " + score;
 }
 
@@ -198,7 +203,7 @@ window.addEventListener('load', function () {
     swipedetect(el, function (swipedir) {
         if (swipedir != 'none') {
 
-            if (swipedir == "top") {
+            if (swipedir == "up") {
                 dino = document.querySelector('.dino');
                 dino.classList.add('animateDino');
                 setTimeout(() => {
@@ -224,3 +229,7 @@ window.addEventListener('load', function () {
         }
     })
 }, false)
+
+function reload(){
+    location.reload();
+}

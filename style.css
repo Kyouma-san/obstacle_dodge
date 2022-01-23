@@ -44,6 +44,17 @@ body{
     font-family: 'Recursive', sans-serif;
 }
 
+.retry{
+    font-family: 'Recursive', sans-serif; 
+    font-size: 20px;
+    width: 146.883px;
+    height: 43px;
+    position: absolute;
+    visibility: hidden;
+    right: 30px;
+    top:31px;
+}
+
 .dino{
     background-image: url(dino2.png);
     background-repeat: no-repeat;
