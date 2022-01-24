@@ -53,6 +53,7 @@ body{
     visibility: hidden;
     right: 30px;
     top:31px;
+    cursor: pointer;
 }
 
 .dino{
